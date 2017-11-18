@@ -5,6 +5,24 @@
 
 [Playground](https://codepan.net/gist/e368155b1a6e034f802001fcb75d72a7)
 
+## Installation
+
+```
+<script src="https://unpkg.com/vue-simple-i18n"></script>
+```
+
+or
+
+```
+npm install vue-simple-i18n
+```
+
+then
+
+```
+import vI18n from 'vue-simple-i18n'
+```
+
 ## Usage
 HTML:
 
