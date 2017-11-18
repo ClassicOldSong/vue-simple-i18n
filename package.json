@@ -1,0 +1,42 @@
+{
+  "name": "vue-simple-i18n",
+  "version": "1.0.0",
+  "description": "(maybe) the most simple and easy to use i18n library for Vue2",
+  "main": "dist/vue-simple-i18n.min.js",
+  "module": "src/main.js",
+  "scripts": {
+    "dev": "rollup -c ./config/rollup.dev.js -w",
+    "build": "NODE_ENV=production rollup -c ./config/rollup.prod.js",
+    "lint": "eslint --ext .js src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClassicOldSong/vue-simple-i18n.git"
+  },
+  "keywords": [
+    "Vue",
+    "i18n",
+    "translation",
+    "internationalization"
+  ],
+  "author": "ClasicOldSong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ClassicOldSong/vue-simple-i18n/issues"
+  },
+  "homepage": "",
+  "devDependencies": {
+    "chalk": "^2.3.0",
+    "chokidar": "^1.7.0",
+    "eslint": "^4.11.0",
+    "rollup": "^0.51.7",
+    "rollup-plugin-browsersync": "^0.2.6",
+    "rollup-plugin-buble": "^0.17.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-progress": "^0.4.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
+}

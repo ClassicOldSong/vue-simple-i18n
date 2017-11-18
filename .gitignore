@@ -1,0 +1,28 @@
+# Generated files
+bin/
+gen/
+
+# Log Files
+*.log
+*.log.*
+
+# Temp Files
+*~
+*.*~
+.fuse_*
+cache/
+
+# Project files
+
+# node modules
+node_modules/
+
+# Audio files
+*.mp3
+
+# Old files
+src/bplayer.old.js
+
+# Binaries
+test/vue-simple-i18n.dev.js*
+dist/

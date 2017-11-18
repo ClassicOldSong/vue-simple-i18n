@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Vue Simple i18n</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./vue-simple-i18n.dev.js"></script>
+</head>
+<body>
+	<div id="app">
+		<select v-model="v_locale">
+			<option v-for="(locale, key) in locales" :value="key">{{locale.__name__}}</option>
+		</select>
+		<input type="text" v-model="name">
+		<h1>{{welcome}}</h1>
+	</div>
+	<script>
+		var i18n = new vI18n({
+			locales: {
+				'en-us': {
+					__name__: 'English',
+					welcome: 'Welcome {{name}} to the Wonderland!'
+				},
+				'zh-cn': {
+					__name__: '简体中文',
+					welcome: '{{name}}，欢迎来到幻境！'
+				}
+			}
+		})
+
+		new Vue({
+			el: '#app',
+			data: {
+				name: 'Yukino',
+				'v_locale': i18n.locale,
+				locales: i18n.locales
+			},
+			computed: i18n.map(['welcome'])
+		})
+	</script>
+</body>
+</html>
