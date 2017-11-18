@@ -3,6 +3,8 @@
 
 [demo](https://vi18n.ccoooss.com/)
 
+[Playground](https://codepan.net/gist/e368155b1a6e034f802001fcb75d72a7)
+
 ## Usage
 HTML:
 
