@@ -7,9 +7,7 @@ Probably the thinnest library to end all Vue i18n solution within 1kb
 
 ## Installation
 
-```
-<script src="https://unpkg.com/vue-simple-i18n"></script>
-```
+CDN: [UNPKG](https://unpkg.com/vue-simple-i18n) | [jsDeliver](https://cdn.jsdelivr.net/npm/vue-simple-i18n@1.1.0/dist/vue-simple-i18n.min.js)
 
 or
 

@@ -1,5 +1,5 @@
 const resolveKeyVal = (instance, keyString) => {
-	const keyPath = keyString.split('.')
+	const keyPath = keyString.trim().split('.')
 	for (let key of keyPath) instance = instance[key]
 	return instance
 }
