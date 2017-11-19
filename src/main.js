@@ -17,9 +17,11 @@ const vI18n = class {
 		const self = this
 		const mapped = {}
 		for (let key of keys) {
-			mapped[`${key}`] = function () {
-				return ((self.locales[this.v_locale] || self.locales[self.locale] || self.locales[self.base] || {})[key] || '')
-				.replace(keyRegex, (match, keyString) => resolveKeyVal(this, keyString))
+			mapped[key] = function () {
+				const translation = (self.locales[this.v_locale] || self.locales[self.locale] || self.locales[self.base] || {})[key] || ''
+				return typeof translation === 'function'
+				? translation(this)
+				: translation.replace(keyRegex, (match, keyString) => resolveKeyVal(this, keyString))
 			}
 		}
 		return mapped
