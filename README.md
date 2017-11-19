@@ -94,7 +94,7 @@ You can add a new locale or modify existing ones as you wish.
 Example:
 
 ``` javascript
-// Now we have English as default but we don't have a chinese translation
+// Now we have English as default but we don't have a Chinese translation
 // But the users specifies Chinese as their locale
 const i18n = new vI18n({
   base: 'en-us',
