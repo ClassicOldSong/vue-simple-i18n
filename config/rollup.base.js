@@ -41,7 +41,7 @@ export default {
 	input: 'src/main.js',
 	output: {
 		name: 'vI18n',
-		format: 'iife',
+		format: 'umd',
 		sourcemap: true
 	},
 	devDest: 'test/vue-simple-i18n.dev.js',

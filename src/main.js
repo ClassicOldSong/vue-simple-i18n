@@ -7,7 +7,7 @@ const resolveKeyVal = (instance, keyString) => {
 const keyRegex = /{{(.*?)}}/g
 
 const vI18n = class {
-	constructor (config) {
+	constructor (config = {}) {
 		this.base = (config.base || 'en-us').toLowerCase()
 		this.locale = (config.locale || navigator.language || navigator.browserLanguage || 'en-us').toLowerCase()
 		this.locales = config.locales || {}

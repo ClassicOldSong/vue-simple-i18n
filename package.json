@@ -1,7 +1,7 @@
 {
   "name": "vue-simple-i18n",
-  "version": "1.0.0",
-  "description": "(maybe) the most simple and easy to use i18n library for Vue2",
+  "version": "1.0.1",
+  "description": "Probably the most simple and easy to use i18n library for Vue2 within 1kb",
   "main": "dist/vue-simple-i18n.min.js",
   "module": "src/main.js",
   "scripts": {

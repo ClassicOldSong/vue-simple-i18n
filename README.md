@@ -1,5 +1,5 @@
 # vue-simple-i18n
-(maybe) the most simple and easy to use i18n library for Vue2 within 1kb
+Probably the most simple and easy to use i18n library for Vue2 within 1kb
 
 [demo](https://vi18n.ccoooss.com/)
 
@@ -60,8 +60,8 @@ const i18n = new vI18n({
 new Vue({
   el: '#app',
   data: {
-    name: 'Yukino', // Value used by template
-    'v_locale': i18n.locale, // Specify 'v_locale' could change locale component-wide
+    name: 'Yukino', // Value used by translation template
+    v_locale: i18n.locale, // Specify 'v_locale' could change locale component-wide
     locales: i18n.locales
   },
   computed: i18n.map(['welcome']) // Map the translation!
