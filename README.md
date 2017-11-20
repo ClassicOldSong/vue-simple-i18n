@@ -7,7 +7,7 @@ Probably the thinnest library to end all Vue i18n solutions within 1kb
 
 ## Installation
 
-CDN: [UNPKG](https://unpkg.com/vue-simple-i18n) | [jsDeliver](https://cdn.jsdelivr.net/npm/vue-simple-i18n@1.1.0/dist/vue-simple-i18n.min.js)
+CDN: [UNPKG](https://unpkg.com/vue-simple-i18n) | [jsDeliver](https://cdn.jsdelivr.net/npm/vue-simple-i18n/dist/vue-simple-i18n.min.js)
 
 or
 
@@ -131,3 +131,6 @@ let name = vm.name
 vm.name = ''
 vm.name = name
 ```
+
+## Restrictions
+Translations with templates and programmatic translations in `v-for` is currently **NOT FULLY** supported. You should make the `v-for` content a component and run `v-for` on it.
