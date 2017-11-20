@@ -86,7 +86,7 @@ new Vue({
     <label>Name:<input type="text" v-model="name"></label>
   </div>
   <ul>
-    <li v-for="(locale, key) in locales">{{hello({v_locale: key, languageName: locale.__name__})}}</li>
+    <li v-for="(locale, key) in locales">{{helloMsg({v_locale: key, languageName: locale.__name__})}}</li>
   </ul>
 </div>
 ```
@@ -96,11 +96,13 @@ const i18n = new vI18n({
   locales: {
     'en-us': {
       __name__: 'English',
-      hello: 'Hello {{name}}, this is how we say hello in {{languageName}}.'
+      hello: 'Hello'
+      helloMsg: 'Hello {{name}}, this is how we say "{{hello}}" in {{languageName}}.'
     },
     'zh-cn': {
       __name__: '简体中文',
-      hello: '{{name}}您好，这是如何用{{languageName}}说hello。'
+      hello: '你好',
+      helloMsg: '{{name}}您好，这是如何用{{languageName}}说“{{hello}}”。'
     },
     // More locales...
   }
@@ -112,8 +114,11 @@ new Vue({
     name: 'Yukino',
     locales: i18n.locales
   },
-  methods: {
+  computed: {
     ...i18n.map(['hello'])
+  },
+  methods: {
+    ...i18n.map(['helloMsg'])
   }
 })
 ```
@@ -142,7 +147,7 @@ new Vue({
 const i18n = new vI18n({
   locales: {
     'en-us': {
-      step: (vm, vars) => `${vars.index} step${vars.index > 1 ? 's' : ''} completed, total ${vm.count} step${vm.count > 1 ? 's' : ''}.`
+      step: (vm, vars) => `${vars.index} step${vars.index > 1 ? 's' : ''} completed, total ${vm.steps} step${vm.steps > 1 ? 's' : ''}.`
     }
   }
 })
@@ -211,6 +216,19 @@ let name = vm.name
 vm.name = ''
 vm.name = name
 ```
+
+</details>
+
+
+### Nested Expressions
+<details>
+<summary>Detail</summary>
+
+**Use case:** Display translations within translations etc.
+
+**Usage:** See [Use Translation as a Method](#use-translation-as-a-method).
+
+**Note:** String level locales will not inherit in nested expressions.
 
 </details>
 
