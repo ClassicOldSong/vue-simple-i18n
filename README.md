@@ -132,5 +132,5 @@ vm.name = ''
 vm.name = name
 ```
 
-## Restrictions
-Translations with templates and programmatic translations in `v-for` is currently **NOT FULLY** supported. You should make the `v-for` content a component and run `v-for` on it.
+### i18n in v-for
+See `index.html` in `test` folder. Documentations will be completed soon.

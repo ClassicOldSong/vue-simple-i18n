@@ -14,29 +14,54 @@
 		</select>
 		<input type="text" v-model="name">
 		<h1>{{welcome}}</h1>
+		<label for="item">{{item}}</label>
+		<input type="text" id="item" v-model="itemname">
+		<label for="number">{{count}}</label>
+		<input type="number" id="number" v-model="itemcount">
+		<ul>
+			<li v-for="count in itemnumber">{{itemCount({count: count})}}</li>
+		</ul>
 	</div>
 	<script>
 		var i18n = new vI18n({
 			locales: {
 				'en-us': {
 					__name__: 'English',
-					welcome: 'Welcome {{name}} to the Wonderland!'
+					welcome: 'Welcome {{name}} to the Wonderland!',
+					item: 'Item',
+					count: 'Count',
+					itemCount: function (instance, vars) {
+						return ['There', vars.count > 1 ? 'are' : 'is only', vars.count, instance.itemname + (vars.count > 1 ? 's' : '')].join(' ')
+					}
 				},
 				'zh-cn': {
 					__name__: '简体中文',
-					welcome: '{{name}}，欢迎来到幻境！'
+					welcome: '{{name}}，欢迎来到幻境！',
+					item: '物品',
+					count: '数量',
+					itemCount: '一共有 {{count}} 只 {{itemname}}'
 				}
 			}
 		})
+
+		var computed = i18n.map(['welcome', 'item', 'count'])
+		var methods = i18n.map(['itemCount'])
+
+		computed.itemnumber = function () {
+			return parseInt(this.itemcount, 10)
+		}
 
 		new Vue({
 			el: '#app',
 			data: {
 				name: 'Yukino',
 				v_locale: i18n.locale,
-				locales: i18n.locales
+				locales: i18n.locales,
+				itemcount: 10,
+				itemname: 'rabbit'
 			},
-			computed: i18n.map(['welcome'])
+			computed: computed,
+			methods: methods
 		})
 	</script>
 </body>

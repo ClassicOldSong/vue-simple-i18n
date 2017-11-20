@@ -1,5 +1,7 @@
-const resolveKeyVal = (instance, keyString) => {
+const resolveKeyVal = (vals, instance, keyString) => {
 	const keyPath = keyString.trim().split('.')
+	const firstKey = keyPath.shift()
+	instance = vals[firstKey] || instance[firstKey]
 	for (let key of keyPath) instance = instance[key]
 	return instance
 }
@@ -14,14 +16,14 @@ const vI18n = class {
 	}
 
 	map (keys) {
-		const self = this
+		const locales = this.locales
 		const mapped = {}
 		for (let key of keys) {
-			mapped[key] = function () {
-				const translation = (self.locales[this.v_locale] || self.locales[self.locale] || self.locales[self.base] || {})[key] || ''
+			mapped[key] = function (vars) {
+				const translation = (locales[(vars || {}).v_locale || this.v_locale || self.locale || self.base] || {})[key] || ''
 				return typeof translation === 'function'
-				? translation(this)
-				: translation.replace(keyRegex, (match, keyString) => resolveKeyVal(this, keyString))
+				? translation(this, vars)
+				: translation.replace(keyRegex, (match, keyString) => resolveKeyVal(vars, this, keyString))
 			}
 		}
 		return mapped
