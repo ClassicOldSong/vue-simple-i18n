@@ -1,5 +1,5 @@
 # vue-simple-i18n
-Probably the thinnest library to end all Vue i18n solution within 1kb
+Probably the thinnest library to end all Vue i18n solutions within 1kb
 
 [Demo](https://vi18n.ccoooss.com/)
 
@@ -93,7 +93,7 @@ Example:
 
 ``` javascript
 // Now we have English as default but we don't have a Chinese translation
-// But the users specifies Chinese as their locale
+// But the user specifies Chinese as his locale
 const i18n = new vI18n({
   base: 'en-us',
   locale: 'zh-cn',
