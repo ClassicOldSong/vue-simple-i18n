@@ -1,7 +1,7 @@
 # vue-simple-i18n
 Probably the thinnest library to end all Vue i18n solutions within 1kb
 
-[Demo](https://vi18n.ccoooss.com/) | [Playground](https://codepan.net/gist/e368155b1a6e034f802001fcb75d72a7)
+[Playground](https://codepan.net/gist/e368155b1a6e034f802001fcb75d72a7)
 
 ## Installation
 

@@ -21,7 +21,7 @@ const vI18n = class {
 		for (let key of keys) {
 			mapped[key] = function (vars) {
 				const translation = (locales[(vars || {}).v_locale || this.v_locale || self.locale || self.base] || {})[key] || ''
-				return typeof translation === 'function'
+				return translation.bind
 				? translation(this, vars)
 				: translation.replace(keyRegex, (match, keyString) => resolveKeyVal(vars, this, keyString))
 			}
