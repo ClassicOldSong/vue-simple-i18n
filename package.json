@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-i18n",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Probably the thinnest library to end all Vue i18n library within 1kb",
   "main": "dist/vue-simple-i18n.min.js",
   "module": "src/main.js",

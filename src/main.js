@@ -14,10 +14,10 @@ const vI18n = class {
 	}
 
 	map (keys) {
-		const locales = this.locales
+		const self = this
 		return keys.reduce((mapped, key) => {
 			mapped[key] = function (vars) {
-				const translation = (locales[(vars || {}).v_locale || this.v_locale || self.locale || self.base] || {})[key] || ''
+				const translation = (self.locales[(vars || {}).v_locale || this.v_locale || self.locale || self.base] || {})[key] || ''
 				return translation.call
 				? translation(this, vars)
 				: translation.replace(keyRegex, (match, keyString) => resolveKeyVal(vars, this, keyString))
